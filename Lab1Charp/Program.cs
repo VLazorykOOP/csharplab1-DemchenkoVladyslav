@@ -148,6 +148,29 @@ class Program
         catch (Exception e)
         { Console.WriteLine(e.Message); }
     }
+    static void task6()
+    {
+        double a, b;
+        while (true)
+        {
+            try
+            {
+                Console.Write("a = ");
+                a = double.Parse(Console.ReadLine());
+                Console.Write("b = ");
+                b = double.Parse(Console.ReadLine());
+                if (a == 0 && b == 0)
+                    throw new DivideByZeroException();
+                break;
+            }
+            catch (Exception e)
+            {
+                Console.Clear();
+                continue;
+            }
+        }
+        Console.WriteLine((a * b + (a - b) * (a + b) - 1) / (a * a + b * b) - 5);
+    }
     public static void Main(String[] args)
     {
         Console.OutputEncoding = UTF8Encoding.UTF8;
@@ -157,5 +180,6 @@ class Program
         //task3();
         //task4();
         //task5();
+        task6();
     }
 }
